@@ -107,6 +107,7 @@ class SUtil
 		#if MODS_ALLOWED
 		if (!FileSystem.exists(SUtil.getPath() + "crash/"))
 			FileSystem.createDirectory(SUtil.getPath() + "crash/");
+			path = SUtil.getPath() + "crash/";
 
 		File.saveContent(path, errMsg + "\n");
 		#end
