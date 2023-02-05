@@ -4317,7 +4317,6 @@ class PlayState extends MusicBeatState
 
 	function finishSong():Void
 	{
-		var finishCallback:Void->Void = beforeEndSong; // In case you want to change it in a specific song.
 
 		updateTime = false;
 		FlxG.sound.music.volume = 0;
@@ -4325,13 +4324,11 @@ class PlayState extends MusicBeatState
 		vocals.pause();
 		if (ClientPrefs.noteOffset <= 0)
 		{
-			finishCallback();
 		}
 		else
 		{
 			finishTimer = new FlxTimer().start(ClientPrefs.noteOffset / 1000, function(tmr:FlxTimer)
 			{
-				finishCallback();
 			});
 		}
 	}
